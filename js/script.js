@@ -81,8 +81,6 @@ var sum = 0;
 
 var activities = document.querySelectorAll(".activities-box input[type='checkbox']");
 
-activities[0].focus();
-console.log(activities[0].focus);
 
 
 activities.forEach(function(item) {
@@ -94,7 +92,20 @@ activities.forEach(function(item) {
     document.getElementById('activities-cost').innerHTML = `Total: $${sum}`;
 
   })
+  item.addEventListener('focus', function() {
+    item.parentElement.classList.add("focus");
+
+  })
+
+  item.addEventListener('blur', function() {
+    item.parentElement.classList.remove("focus");
+
+  })
+
+
 })
+
+
 
 
 
