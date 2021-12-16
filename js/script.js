@@ -1,4 +1,4 @@
-console.log("hello World");
+
 
 //************ focus on name elment by page load *****************************
 var userName =document.getElementById('name');
@@ -77,18 +77,26 @@ selColor.addEventListener ("change", function () {
 //************ activities**************************************************
 var sum = 0;
 
+
+
 var activities = document.querySelectorAll(".activities-box input[type='checkbox']");
 
+activities[0].focus();
+console.log(activities[0].focus);
+
+
 activities.forEach(function(item) {
+
+
   item.addEventListener('click', function() {
-      
-    //var attribute = this.getAttribute("data-cost");
-    
+
     sum = [...document.querySelectorAll('#activities-box input:checked')].map(e => parseInt(e.getAttribute("data-cost"))).reduce((partial_sum, a) => partial_sum + a, 0);
     document.getElementById('activities-cost').innerHTML = `Total: $${sum}`;
 
   })
 })
+
+
 
 //************ payment**************************************************
 
