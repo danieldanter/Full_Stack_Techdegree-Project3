@@ -78,9 +78,11 @@ selColor.addEventListener ("change", function () {
 var sum = 0;
 
 var activities = document.querySelectorAll(".activities-box input[type='checkbox']");
+
 activities.forEach(function(item) {
   item.addEventListener('click', function() {
-    var attribute = this.getAttribute("data-cost");
+      
+    //var attribute = this.getAttribute("data-cost");
     
     sum = [...document.querySelectorAll('#activities-box input:checked')].map(e => parseInt(e.getAttribute("data-cost"))).reduce((partial_sum, a) => partial_sum + a, 0);
     document.getElementById('activities-cost').innerHTML = `Total: $${sum}`;
